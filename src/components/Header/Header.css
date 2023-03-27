@@ -1,0 +1,35 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 80px;
+    background-color: #1C2B35;
+}
+
+.nav-bar .menu {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    
+}
+
+.nav-bar .menu a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .2s;    
+}
+.nav-bar .menu a:hover {
+    color: #FF9900;
+}
+
+.login-button {
+    padding: 1px 10px 2px 10px;
+    border: 2px solid #FF9900;
+    border-radius: 20px;
+}
+.login-button:hover {
+    border: 2px solid white;
+    color: white;
+}
