@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Product = (props) => { // props containing key, info, addToCartFunction
-    const {img, name, price, seller, ratings} = props.info; // here, destructured only info
+    const {img, name, price, seller, ratings} = props.product; // here, destructured only product
     const addToCartFunction = props.addToCartFunction;
 
     return (
@@ -16,7 +16,7 @@ const Product = (props) => { // props containing key, info, addToCartFunction
                 <p>Sellar - {seller}</p>
                 <p>Ratting - {ratings}.0</p>
             </div>
-            <button onClick={()=>addToCartFunction(props.info)} className='add-to-cart-btn'>Add to cart <FontAwesomeIcon icon={faCartPlus} /></button>
+            <button onClick={()=>addToCartFunction(props.product)} className='add-to-cart-btn'>Add to cart <FontAwesomeIcon icon={faCartPlus} /></button>
         </div>
     );
 };

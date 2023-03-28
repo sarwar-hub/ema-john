@@ -1,0 +1,29 @@
+.cart {
+    background-color: #1C2B35;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+.cart .cart-title {
+    margin: 0;
+    padding: 20px 0 0 10px;
+}
+.cart .details {
+    padding: 10px;
+}
+.cart .details p {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart .details p:nth-child(odd) {
+    background-color: #8c969e;
+}
+.cart .details p:nth-child(even) {
+    background-color: #5e7180;
+}
+.cart .details p:last-child{
+    background-color: #5e7180;
+    font-weight: 700;
+}
