@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -13,10 +14,35 @@ const Shop = () => {
    
     // state for cart
     const [cart, setCart] = useState([]);
+
     const addToCart = (addedProduct) => {
         const updatedCart = [...cart, addedProduct];
         setCart(updatedCart);
+
+        addToDb(addedProduct.id);
     }
+
+
+    // get data from local storage to find matched(added) product and set them in cart state
+    useEffect(()=>{
+        // get array of object(product) from local storage
+        const savedItemsID = getShoppingCart();
+        // save products are pushed in this array after matching saved id and products id
+        let cartProducts = [];
+        // get id of product from saveItems
+        for (const id in savedItemsID) {
+            // find matched id product
+            const savedProduct = products.find(product => product.id === id);
+            if (savedProduct) {
+                // set product quantity
+                savedProduct.quantity = savedItemsID[id]; // value of id from local storage
+                // push to cartProducts
+                cartProducts.push(savedProduct);
+            }
+            
+        }
+        setCart(cartProducts);
+    },[products])
 
     return (
         <div className='shop'>
