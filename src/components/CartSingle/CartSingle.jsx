@@ -1,20 +1,20 @@
 import React from 'react';
-import { BeakerIcon, TrashIcon  } from '@heroicons/react/24/solid'
+import { TrashIcon  } from '@heroicons/react/24/solid'
 import './CartSingle.css';
 
 const CartSingle = ({product}) => {
     const {name, price, shipping, img, quantity} = product;
     return (
         <div className='single-product'>
-            <div><img className='single-image' src={img} alt="" /></div>
+            <div className='single-image'><img src={img} alt="" /></div>
             <div className='single-data'>
                 <div>
                     <h3>{name}</h3>
-                    <p>Price: {price}</p>
-                    <p>Shipping: {shipping}</p>
+                    <p>Price: <span className='single-price'>${price}</span></p>
+                    <p>Shipping: <span className='single-price'>${shipping}</span></p>
                 </div>
                 <div>
-                    <TrashIcon></TrashIcon>
+                    <TrashIcon className='trash-icon'></TrashIcon>
                 </div>
             </div>
         </div>
