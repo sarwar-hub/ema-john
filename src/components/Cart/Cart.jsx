@@ -1,25 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cart.css';
 import { useLoaderData } from 'react-router-dom';
 import MiniCart from '../MiniCart/MiniCart';
 import CartSingle from '../CartSingle/CartSingle';
+import { removeFromDb } from '../../utilities/fakedb';
 
 
 
 const Cart = () => {
-    const cartProducts = useLoaderData();
+    const savedProducts = useLoaderData();
+    const [cart, setCart] = useState(savedProducts);
+
+    const handleDelete = (id) => {
+        const itemsAfterDlete = cart.filter(product=>product.id !== id);
+        setCart(itemsAfterDlete);
+        removeFromDb(id);
+    }
     
     return (
         <div className='main-cart'>
             <div>
-                <h1>Cart Products {cartProducts.length}</h1>
+                <h1>Cart Products</h1>
                 {
-                    cartProducts.map(product=><CartSingle key={product.id} product={product}></CartSingle>)
+                    cart.map(product=><CartSingle key={product.id} product={product} handleDelete={handleDelete}></CartSingle>)
                 }
             </div>
             <div>
                 <h1>Cart calculation</h1>
-                <MiniCart cartProducts={cartProducts}></MiniCart>
+                <MiniCart savedProducts={cart}></MiniCart>
             </div>
         </div>
     );

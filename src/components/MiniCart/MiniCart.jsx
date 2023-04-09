@@ -2,12 +2,12 @@ import React from 'react';
 import './MiniCart.css';
 
 const MiniCart = (props) => { // props always an object
-    const {cartProducts} = props; // cartProduct is an element of 'props' object and itself is an array of object
+    const {savedProducts} = props; // cartProduct is an element of 'props' object and itself is an array of object
 
    let totalPrice = 0;
    let totalShipping = 0;
    let totalItems = 0;
-   for (const product of cartProducts) {
+   for (const product of savedProducts) {
         product.quantity = product.quantity || 1;
         totalPrice += product.price * product.quantity;
         totalShipping += product.shipping;

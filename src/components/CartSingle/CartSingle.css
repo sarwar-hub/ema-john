@@ -1,7 +1,7 @@
 .single-product {
     display: flex;
     border: 2px solid lightgray;
-    padding: 5px;
+    padding: 5px 20px 5px 5px;
     margin-bottom: 20px;
     gap: 20px;
 }
@@ -17,7 +17,7 @@
     height: 100%;
 }
 .single-info {
-    border: 2px solid red;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,10 +26,15 @@
 .trash-icon {
     color: #EB5757;
     background-color: #eb575739;
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
     width: 40px;
     height: 40px;
+    cursor: pointer;
+    transition: .2s;
+}
+.trash-icon:hover {
+    transform: scale(1.1);
 }
 .single-price {
     color: #FF9900;

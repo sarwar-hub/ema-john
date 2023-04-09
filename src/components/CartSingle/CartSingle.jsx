@@ -2,8 +2,8 @@ import React from 'react';
 import { TrashIcon  } from '@heroicons/react/24/solid'
 import './CartSingle.css';
 
-const CartSingle = ({product}) => {
-    const {name, price, shipping, img} = product;
+const CartSingle = ({product, handleDelete}) => {
+    const {id, name, price, shipping, img} = product;
     return (
         <div className='single-product'>
             <div className='single-image'><img src={img} alt="" /></div>
@@ -14,7 +14,7 @@ const CartSingle = ({product}) => {
                     <p>Shipping: <span className='single-price'>${shipping}</span></p>
                 </div>
                 <div>
-                    <TrashIcon className='trash-icon'></TrashIcon>
+                    <TrashIcon onClick={()=>handleDelete(id)} className='trash-icon'></TrashIcon>
                 </div>
             </div>
         </div>

@@ -57,7 +57,7 @@ const Shop = () => {
             </div>
             
                 <div className="cart-container">
-                    <MiniCart cartProducts={cart}></MiniCart>
+                    <MiniCart savedProducts={cart}></MiniCart>
                 </div>
             
         </div>
