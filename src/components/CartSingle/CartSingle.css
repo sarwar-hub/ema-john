@@ -17,9 +17,11 @@
     height: 100%;
 }
 .single-info {
+    border: 2px solid red;
     display: flex;
     align-items: center;
-   
+    justify-content: space-between;
+    width: 100%;
 }
 .trash-icon {
     color: #EB5757;

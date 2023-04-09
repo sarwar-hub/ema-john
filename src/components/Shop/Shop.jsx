@@ -47,7 +47,7 @@ const Shop = () => {
     return (
         <div className='shop'>
             <div className="products">
-                <h1>Shop</h1>
+                <h1>Shop </h1>
                 <small>Showing {products.length} products</small>
                 <div className="products-container">
                 {

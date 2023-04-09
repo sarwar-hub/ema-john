@@ -2,7 +2,7 @@ import React from 'react';
 import './Cart.css';
 import { useLoaderData } from 'react-router-dom';
 import MiniCart from '../MiniCart/MiniCart';
-import CartSingle from '../cartSingle/cartSingle';
+import CartSingle from '../CartSingle/CartSingle';
 
 
 
@@ -14,7 +14,7 @@ const Cart = () => {
             <div>
                 <h1>Cart Products {cartProducts.length}</h1>
                 {
-                    cartProducts.map(product=><CartSingle product={product}></CartSingle>)
+                    cartProducts.map(product=><CartSingle key={product.id} product={product}></CartSingle>)
                 }
             </div>
             <div>
