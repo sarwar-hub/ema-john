@@ -6,7 +6,6 @@
 }
 .cart .cart-title {
     margin: 0;
-    padding: 20px 0 0 10px;
 }
 .cart .details {
     padding: 10px;
@@ -30,4 +29,19 @@
 
 .count {
     font-size: 28px;
+}
+
+.clear-cart {
+    color: rgb(210, 210, 210);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.clear-cart:hover {
+    color: white;
+}
+.cart-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10px 0 10px;
 }

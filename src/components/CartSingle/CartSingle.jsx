@@ -14,7 +14,7 @@ const CartSingle = ({product, handleDelete}) => {
                     <p>Shipping: <span className='single-price'>${shipping}</span></p>
                 </div>
                 <div>
-                    <TrashIcon onClick={()=>handleDelete(id)} className='trash-icon'></TrashIcon>
+                    <TrashIcon title='Remove item' onClick={()=>handleDelete(id)} className='trash-icon'></TrashIcon>
                 </div>
             </div>
         </div>

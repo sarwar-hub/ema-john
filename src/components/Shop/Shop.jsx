@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import MiniCart from '../MiniCart/MiniCart';
 import Product from '../Product/Product';
 import './Shop.css';
+import { Link } from 'react-router-dom';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
@@ -22,6 +23,10 @@ const Shop = () => {
         addToDb(addedProduct.id);
     }
 
+    const clearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
 
     // get data from local storage to find matched(added) product and set them in cart state
     useEffect(()=>{
@@ -57,7 +62,9 @@ const Shop = () => {
             </div>
             
                 <div className="cart-container">
-                    <MiniCart savedProducts={cart}></MiniCart>
+                    <MiniCart savedProducts={cart} clearCart={clearCart}>
+                        <Link to="/cart"><button className='cart-bottom-button'>Cart Overview →</button></Link>
+                    </MiniCart>
                 </div>
             
         </div>
