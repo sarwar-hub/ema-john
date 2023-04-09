@@ -4,7 +4,8 @@ import Shop from './components/Shop/Shop';
 import './index.css'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from './Root';
-import Cart from './components/Cart/MiniCart';
+import Cart from './components/Cart/Cart';
+import cartProducts from './loader/cartProducts';
 
 const router = createBrowserRouter([
     {
@@ -17,8 +18,13 @@ const router = createBrowserRouter([
           element: <Shop></Shop>
         },
         {
+          path: '/shop',
+          element: <Shop></Shop>
+        },
+        {
           path: '/cart',
-          element: <Cart></Cart>
+          element: <Cart></Cart>,
+          loader:() => cartProducts()
         }
       ]
     }

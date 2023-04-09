@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addToDb, getShoppingCart } from '../../utilities/fakedb';
-import Cart from '../Cart/MiniCart';
+import MiniCart from '../MiniCart/MiniCart';
 import Product from '../Product/Product';
 import './Shop.css';
 
