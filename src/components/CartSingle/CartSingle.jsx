@@ -7,7 +7,7 @@ const CartSingle = ({product}) => {
     return (
         <div className='single-product'>
             <div className='single-image'><img src={img} alt="" /></div>
-            <div className='single-data'>
+            <div className='single-info'>
                 <div>
                     <h3>{name}</h3>
                     <p>Price: <span className='single-price'>${price}</span></p>
