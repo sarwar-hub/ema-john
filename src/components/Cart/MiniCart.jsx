@@ -1,7 +1,7 @@
 import React from 'react';
-import './Cart.css';
+import './MiniCart.css';
 
-const Cart = (props) => { // props always an object
+const MiniCart = (props) => { // props always an object
     const {cartProducts} = props; // cartProduct is an element of 'props' object and itself is an array of object
 
    let totalPrice = 0;
@@ -31,4 +31,4 @@ const Cart = (props) => { // props always an object
     );
 };
 
-export default Cart;
+export default MiniCart;

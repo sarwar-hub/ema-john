@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addToDb, getShoppingCart } from '../../utilities/fakedb';
-import Cart from '../Cart/Cart';
+import Cart from '../Cart/MiniCart';
 import Product from '../Product/Product';
 import './Shop.css';
 
@@ -57,7 +57,7 @@ const Shop = () => {
             </div>
             
                 <div className="cart-container">
-                    <Cart cartProducts={cart}></Cart>
+                    <MiniCart cartProducts={cart}></MiniCart>
                 </div>
             
         </div>
