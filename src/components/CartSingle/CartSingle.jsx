@@ -3,7 +3,7 @@ import { TrashIcon  } from '@heroicons/react/24/solid'
 import './CartSingle.css';
 
 const CartSingle = ({product}) => {
-    const {name, price, shipping, img, quantity} = product;
+    const {name, price, shipping, img} = product;
     return (
         <div className='single-product'>
             <div className='single-image'><img src={img} alt="" /></div>
