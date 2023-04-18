@@ -7,6 +7,8 @@ import Root from './Root';
 import Cart from './components/Cart/Cart';
 import cartProducts from './loader/cartProducts';
 import Checkout from './components/Checkout/Checkout';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
 
 const router = createBrowserRouter([
     {
@@ -19,17 +21,25 @@ const router = createBrowserRouter([
           element: <Shop></Shop>
         },
         {
-          path: '/shop',
+          path: 'shop',
           element: <Shop></Shop>
         },
         {
-          path: '/cart',
+          path: 'cart',
           element: <Cart></Cart>,
           loader:() => cartProducts()
         },
         {
-          path: '/checkout',
+          path: 'checkout',
           element: <Checkout></Checkout>
+        },
+        {
+          path: 'register',
+          element: <Register></Register>
+        },
+        {
+        path: 'login',
+        element: <Login></Login>
         }
       ]
     }
