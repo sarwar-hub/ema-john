@@ -18,7 +18,7 @@ const Login = () => {
                 <button className='login-btn'>Login</button>
                 <p className='routing-text'>New to Ema-John? <Link to='/register'><span className='link'>Create New Account</span></Link></p>
                 <span className='divider'><hr /> <span className='or'>or</span> <hr /></span>
-                <button className='login-google'><img src="https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png" alt="" /> Continue with Google</button>
+                <button className='login-google'><img src="/google.png" alt="" /> Continue with Google</button>
             </form>
             
         </div>
