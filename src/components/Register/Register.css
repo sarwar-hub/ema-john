@@ -106,6 +106,7 @@
     background-color: rgba(255, 0, 0, 0.223);
     padding: 10px;
     border-radius: 5px;
+    margin: 5px 0;
 }
 .notice {
     color: rgb(53, 50, 227);

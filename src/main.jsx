@@ -10,6 +10,7 @@ import Checkout from './components/Checkout/Checkout';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import AuthContext from './context/AuthContext';
+import PrivateRoute from './routes/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'checkout',
-          element: <Checkout></Checkout>
+          element: <PrivateRoute><Checkout></Checkout></PrivateRoute>
         },
         {
           path: 'register',

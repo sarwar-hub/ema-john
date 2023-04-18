@@ -25,7 +25,8 @@ const Register = () => {
         if (password !== confirmPassword) {
             setPassError('Passowrd doesn\'t matched.');
             return;
-        } else if (password < 6) {
+        }
+        if (password.length < 6) {
             setPassError('Password should be at least 6 characters');
             return;
         }
@@ -37,7 +38,7 @@ const Register = () => {
             setNotice('Check your inbox to varify your email');
         } catch(error) {
             setError(error.message);
-            console.log(error.message);
+            return;
         }
 
         

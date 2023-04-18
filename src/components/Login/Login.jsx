@@ -1,12 +1,41 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { Authentication } from '../../context/AuthContext';
 
 const Login = () => {
+
+    const {user, login} = useContext(Authentication);
+    const navigate = useNavigate();
+
+    const [error, setError] = useState('');
+
+    const handleLogin = async(event) => {
+        event.preventDefault();
+        setError('');
+    
+
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        // login
+        try {
+            await login(email, password);
+            navigate('/')
+        } catch(error) {
+            setError(error.message);
+            return;
+        }
+
+        event.target.reset();
+    }
+
+   
+
     return (
         <div className='form-container'>
             <h2>Login</h2>
-            <form className='form'>
+            <form onSubmit={handleLogin} className='form'>
                 <div className='form-control'>
                     <label htmlFor="">Email</label>
                     <input type="email" name="email" />
@@ -15,6 +44,10 @@ const Login = () => {
                     <label htmlFor="">Password</label>
                     <input type="password" name="password" />
                 </div>
+                {error&&
+
+                <div className='error'>{error}</div>
+                }
                 <button className='login-btn'>Login</button>
                 <p className='routing-text'>New to Ema-John? <Link to='/register'><span className='link'>Create New Account</span></Link></p>
                 <span className='divider'><hr /> <span className='or'>or</span> <hr /></span>
