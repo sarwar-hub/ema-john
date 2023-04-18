@@ -36,7 +36,7 @@ const Cart = () => {
             <div>
                 <h1>Cart calculation</h1>
                 <MiniCart savedProducts={cart} clearCart={clearCart}>
-                    <Link to="/checkout"><button className='cart-bottom-button'>Cart Overview →</button></Link>
+                    <Link to="/checkout"><button className='cart-bottom-button'>Checkout →</button></Link>
                 </MiniCart>
             </div>
         </div>

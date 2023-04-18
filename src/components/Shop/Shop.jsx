@@ -5,6 +5,11 @@ import Product from '../Product/Product';
 import './Shop.css';
 import { Link } from 'react-router-dom';
 
+
+
+
+
+
 const Shop = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
