@@ -29,6 +29,7 @@ const AuthContext = ({children}) => {
 
     // create new user
     const createUser = (email, password) => {
+        setLoadding(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
     // email varify
@@ -38,6 +39,7 @@ const AuthContext = ({children}) => {
 
     // login
     const login = (email, password) => {
+        setLoadding(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 

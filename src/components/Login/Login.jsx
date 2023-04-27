@@ -1,12 +1,14 @@
 import React, { useContext, useState } from 'react';
 import './Login.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Authentication } from '../../context/AuthContext';
 
 const Login = () => {
 
     const {user, login} = useContext(Authentication);
     const navigate = useNavigate();
+    const location = useLocation();
+    const redirectPath = location.state?.from?.pathname || '/';
 
     const [error, setError] = useState('');
 
@@ -21,7 +23,7 @@ const Login = () => {
         // login
         try {
             await login(email, password);
-            navigate('/')
+            navigate(redirectPath, {replace:true})
         } catch(error) {
             setError(error.message);
             return;
